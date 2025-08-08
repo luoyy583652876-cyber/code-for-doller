@@ -1,4 +1,4 @@
-import { Controller, Get, HttpCode, HttpStatus, Stream } from '@midwayjs/core';
+import { Controller, Get, HttpCode, HttpStatus } from '@midwayjs/core';
 import { Context } from '@midwayjs/web';
 import { Readable } from 'stream';
 
@@ -85,7 +85,6 @@ export class MCPPController {
    * SSE长连接接口 - 实时推送事件
    */
   @Get('/sse')
-  @Stream()
   async sse(ctx: Context) {
     // 设置SSE响应头
     const response = ctx.response;
